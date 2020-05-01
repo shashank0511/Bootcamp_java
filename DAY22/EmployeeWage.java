@@ -3,32 +3,33 @@ public static void main(String[] args)
     {
      System.out.println("Welcome to the Employee wage computation program " );    	
        // decleartion
-	//decleartion
-	   private static int isPartTime=1; 
-	   private static int isFullTime=2; 
-	   private static int empRatePerHr=20; 
-	   private static int empHrs=0;
-	   private static int attendance=(int)(Math.random()*3); 
-	   private static int salary=0;
-		//checking attandance
-		switch(attendance)
-		{ 
-		//checking part time /full rime
-		case 1:
-			empHrs=8; 
-		  break;
-		case 2: 
-			empHrs=4; 
-			break;
-		default: 
-			empHrs=0; 
-			break; 
-		}
-		//calculating salary of an employee
-		salary=empHrs*empRatePerHr ;
-
-		System.out.println("Salary Of Employee= "+salary );
-
+		
+	    int isPartTime=1; 
+		int isFullTime=2; 
+		int empRatePerHr=20;
+		int totalSalary=0;
+		int empHrs=0;
+		int numWorkingDays=20; 
+		// checking the condition of working day of employee
+		for(int day=1; day<=numWorkingDays;day++) 
+		{
+			// check attandance
+			int attendance=(int)(Math.random()*3); 
+			int salary=0;
+			switch(attendance) 
+			{
+			case 1:
+				empHrs=8; 
+				break; 
+			case 2:
+				empHrs=4;
+				break;
+			default:
+				empHrs=0;
+				break;
+			}
+			//calculating salary of an employee for this month
+			salary=empHrs*empRatePerHr ; totalSalary=(totalSalary+salary ); }
+		System.out.println("Salary Of Employee= "+totalSalary );
      }
 }
-  
