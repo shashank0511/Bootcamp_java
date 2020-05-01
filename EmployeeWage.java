@@ -2,63 +2,36 @@ public class EmployeeWage {
 	public static void main(String[] args) {
 		System.out.println("Welcome to the Employee wage computation");
 		
-
 	System.out.println("Welcome to the Employee wage computation");
-		
-		int IS_PRESENT=1;
-		double wagePerHour=20;
-		double fullDay=8;
-		double halfDay=4;	
-		double empWage;
-		double empCheck=Math.floor(Math.random() * 10 ) %2;
-		
-		switch ((int) empCheck){
-		case 1:
-			int IS_FULLTIME=1;
-			double fullTimeCheck=Math.floor(Math.random()*10)%2;
+		  int IS_PART_TIME=1;
+		int IS_FULL_TIME=2;
+		int MAX_HRS_IN_MONTH=10; 
+		int EMP_RATE_PER_HR=20; 
+		int NUM_WORKING_DAYS=20;
+		int totalEmpHr=0; 
+		int totalWorkingDays=0;
 
-			System.out.println("Employee is present");
-
-	int IS_PRESENT=1;
-				double wagePerHour=20;
-				double fullDay=8;
-				double halfDay=4;	
-				double empWage;
-				double empCheck=Math.floor(Math.random() * 10 ) %2;
-	
-
-				if (empCheck==IS_PRESENT){
-				int IS_FULLTIME=1;
-				double fullTimeCheck=Math.floor(Math.random()*10)%2;
-			
-				System.out.println("Employee is present");
-
-
-				if (fullTimeCheck==IS_FULLTIME){
-				empWage=wagePerHour*fullDay;
-				System.out.println("Employee works fulltime and Employee wage is: "+ empWage);
-
-
-			break;
-
+		while(totalEmpHr <= MAX_HRS_IN_MONTH && totalWorkingDays < NUM_WORKING_DAYS)
+		{
+			totalWorkingDays++; 
+			int attendance=(int)(Math.random()*3); 
+			int empHrs=0;
+			switch(attendance) 
+			{ case 1:
+				empHrs=8; 
+				break; 
+			case 2:
+				empHrs=4;
+				break;
 			default:
-				empWage=wagePerHour*halfDay;
-                System.out.println("Employee works parttime and Employee wage is: "+ empWage);
-			break;
-			}
+				empHrs=0;
+				break; 
+			} 
+			totalEmpHr=(totalEmpHr+empHrs); 
+		} 
+		int totalSalary=(totalEmpHr*EMP_RATE_PER_HR);
+		System.out.println("Salary Of Employee= "+totalSalary );
 
-				}
-				else {
-				empWage=wagePerHour*halfDay;
-                                System.out.println("Employee works parttime and Employee wage is: "+ empWage);
-				}
-			}
-		
-
-
-		else{
-			System.out.println("Employee is absent");
-		}
-	}
+     }
 }
 
